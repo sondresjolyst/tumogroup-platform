@@ -87,6 +87,10 @@ if [[ -z "$FLUX_VERSION" ]]; then
     exit 1
 fi
 
+if [[ -z "$USER_PROMPT" ]]; then
+    USER_PROMPT=true
+fi
+
 FLUX_LOCAL="$(flux version -ojson | jq -r .flux)"
 
 #######################################################################################
